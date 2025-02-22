@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class CheckForExit : MonoBehaviour
 {
-    GameManager gameManager;
+    private GameManager gameManager;
 
     [SerializeField] private int currencyAward = 1;
+    [SerializeField] private int enemyDamage = 1;
+
     void Start()
     {
         gameManager = FindFirstObjectByType<GameManager>();
@@ -23,6 +25,12 @@ public class CheckForExit : MonoBehaviour
             if (collision.gameObject.CompareTag("RedCell"))
             {
                 gameManager?.OnObjectReachedTarget(currencyAward);
+                collision.gameObject.SetActive(false);
+            }
+
+            if (collision.gameObject.CompareTag("BlackCell"))
+            {
+                gameManager?.OnEnemyReachedTarget(enemyDamage);
                 collision.gameObject.SetActive(false);
             }
         }

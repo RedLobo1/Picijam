@@ -24,7 +24,7 @@ public class CurrencyManager : MonoBehaviour
     {
         if (currencyText != null)
         {
-            currencyText.text = "Currency: " + currency.ToString();
+            currencyText.text = currency.ToString();
         }
     }
 }

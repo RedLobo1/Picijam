@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 3277797664206874019}
   - component: {fileID: 1288043852330213644}
   - component: {fileID: 8385858036177691814}
-  m_Layer: 0
+  - component: {fileID: -7415729771849356205}
+  - component: {fileID: 7494841757638293668}
+  m_Layer: 3
   m_Name: WhiteCell
   m_TagString: WhiteCell
   m_Icon: {fileID: 0}
@@ -102,11 +104,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: fc799d9d2f4ac5a40ae0b59d92fd962e, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -166,5 +168,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragRadius: 0.87
-  dragSpeedFactor: 0.5
-  dragDeceleration: 4
+  dragSpeedFactor: 0.2
+  dragDeceleration: 2
+--- !u!114 &-7415729771849356205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180599924611274794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcabdcf6c2b2704f88ccb0d155a5818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 3
+  _currentHealth: 3
+  _timer: 0.25
+--- !u!114 &7494841757638293668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180599924611274794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b427c867e2cab3a4c9c6d34ae1e2c244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6324756546967069104, guid: 95e0ff1609a058c40b397fd269765ce7, type: 3}
+  shootingRadius: 5
+  cooldownTime: 2
+  shootingPoint: {fileID: 5884808251628327039}
+  tag: BlackCell

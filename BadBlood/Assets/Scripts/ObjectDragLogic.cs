@@ -62,6 +62,7 @@ public class ObjectDragLogic : MonoBehaviour
                 rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, dragDeceleration * Time.deltaTime);
             }
         }
+        transform.rotation = Quaternion.identity;   
     }
     // Draw a circle in the Scene view to represent the drag radius
     void OnDrawGizmosSelected()

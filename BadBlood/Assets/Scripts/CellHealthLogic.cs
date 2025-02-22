@@ -16,7 +16,7 @@ public class CellHealthLogic : MonoBehaviour
     private TextMeshPro _enemyHealthText;
 
     private SpriteRenderer _characterColor;
-    private SpriteRenderer _originalColor;
+    private Color _originalColor;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class CellHealthLogic : MonoBehaviour
             _enemyHealthText = GetComponentInChildren<TextMeshPro>();
         }
         _characterColor = GetComponent<SpriteRenderer>();
-        _originalColor = _characterColor;
+        _originalColor = _characterColor.color;
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class CellHealthLogic : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))  // Corrected this part
         {
-            _currentHealth--;  // Decrease health when "E" is pressed
+            TakeDamage(2);
         }
     }
 
@@ -46,7 +46,11 @@ public class CellHealthLogic : MonoBehaviour
     {
         _currentHealth -= damage;
 
-        
+
+        if (_enemyHealthText != null)
+        {
+            UpdateUI();
+        }
         StartCoroutine(ChangeColor());
         //Put enemy damage logic here
     }
@@ -54,12 +58,18 @@ public class CellHealthLogic : MonoBehaviour
     public void Kill()
     {
         //PutKillLogicHere
+        gameObject.SetActive(false);
+    }
+
+    private void UpdateUI()
+    {
+        _enemyHealthText.text = _currentHealth.ToString();
     }
 
     IEnumerator ChangeColor()
     {
-        _characterColor.color = Color.black;
+        _characterColor.color = Color.white;
         yield return new WaitForSeconds(_timer);  // Corrected this line
-        _characterColor.color = _originalColor.color;
+        _characterColor.color = _originalColor;
     }
 }
