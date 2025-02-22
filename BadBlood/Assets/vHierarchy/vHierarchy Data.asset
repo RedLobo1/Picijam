@@ -19,6 +19,15 @@ MonoBehaviour:
     - goDatas_byGlobalId:
         keys:
         - globalObjectIdString: GlobalObjectId_V1-2-45701face80689648970eabc0348e128-304347273-0
+        - globalObjectIdString: GlobalObjectId_V1-2-45701face80689648970eabc0348e128-668019228-0
+        - globalObjectIdString: GlobalObjectId_V1-2-45701face80689648970eabc0348e128-758279409-0
+        - globalObjectIdString: GlobalObjectId_V1-2-45701face80689648970eabc0348e128-1580849143-0
         values:
         - colorIndex: 6
+          iconNameOrGuid: 
+        - colorIndex: 2
+          iconNameOrGuid: 
+        - colorIndex: 7
+          iconNameOrGuid: 
+        - colorIndex: 3
           iconNameOrGuid: 

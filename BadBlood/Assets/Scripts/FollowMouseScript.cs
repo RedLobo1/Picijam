@@ -4,6 +4,7 @@ public class FollowMouseScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    [SerializeField] private Color colorToChangeTo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +29,7 @@ public class FollowMouseScript : MonoBehaviour
         // Change color based on left mouse button input
         if (Input.GetMouseButtonDown(0)) // Left mouse button clicked
         {
-            spriteRenderer.color = Color.yellow;
+            spriteRenderer.color = colorToChangeTo;
         }
         else if (Input.GetMouseButtonUp(0)) // Left mouse button released
         {
