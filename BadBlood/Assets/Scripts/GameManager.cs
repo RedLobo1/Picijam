@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Shop settings")]
     public int RegularWhiteCost = 6;
+    public int TrapCost = 2;
 
     [Header("Managers")]
     public CurrencyManager currencyManager;  // Reference to the currency manager to add currency

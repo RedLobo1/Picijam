@@ -154,4 +154,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7.5
   lifetime: 5
+  explosion: {fileID: 1070458226499654527, guid: 8daccb53b83b09c48ba93dd22afd8958, type: 3}
   moveDirection: {x: 0, y: 0}

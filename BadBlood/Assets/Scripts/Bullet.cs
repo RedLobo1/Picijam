@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;   // Speed of the bullet
     [SerializeField] private float lifetime = 5f;  // Lifetime of the bullet before it is destroyed
+    [SerializeField] private GameObject explosion;
 
     public Vector2 moveDirection;
 
@@ -23,6 +24,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Destroy the bullet on any collision
+        Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

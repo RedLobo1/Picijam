@@ -7,6 +7,10 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float spawnRadius = 5f;    // Radius in which to spawn the object
     [SerializeField] private float spawnInterval = 2f;  // Time in seconds between each spawn
 
+    [SerializeField] public bool randomizeSize = false; // Toggle random size
+    [SerializeField] private float minSize = 0.5f;      // Minimum random size
+    [SerializeField] private float maxSize = 2f;        // Maximum random size
+
     private void Start()
     {
         // Start the spawning process immediately
@@ -34,7 +38,14 @@ public class Spawner : MonoBehaviour
         Vector2 randomPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
 
         // Instantiate the object at the random position
-        Instantiate(objectToSpawn, randomPosition, Quaternion.identity);  // Using Quaternion.identity for no rotation
+        GameObject spawnedObject = Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
+
+        // Apply random scaling if enabled
+        if (randomizeSize)
+        {
+            float randomScale = Random.Range(minSize, maxSize);
+            spawnedObject.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+        }
     }
 
     // This method will be called to draw the radius in the scene view

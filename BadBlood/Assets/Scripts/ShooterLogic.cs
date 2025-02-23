@@ -8,10 +8,12 @@ public class ShooterLogic : MonoBehaviour
     [SerializeField] private Transform shootingPoint;   // The point from where the bullet will be shot
 
     CellHealthLogic cellHealthLogic;
+    Animator animator;
 
     private void Start()
     {
         cellHealthLogic = GetComponent<CellHealthLogic>();
+        animator = GetComponent<Animator>();
     }
     public enum States
     {
@@ -52,6 +54,7 @@ public class ShooterLogic : MonoBehaviour
     void ShootBullet(Vector2 direction)
     {
         // Instantiate a bullet at the shooting point
+        animator.Play("Shoot");
         cellHealthLogic.TakeDamage(0.1f);
 
         GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);

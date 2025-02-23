@@ -21,6 +21,7 @@ public class CellHealthLogic : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] private SpriteRenderer _characterColor;
     [SerializeField] private Color _damageColor = Color.white;
+    [SerializeField] private GameObject _explodeVisual;
     private Color _originalColor;
 
 
@@ -46,15 +47,15 @@ public class CellHealthLogic : MonoBehaviour
             Kill();
         }
 
-        if (Input.GetKeyDown(KeyCode.E)) // Damage trigger
-        {
-            TakeDamage(2);
-        }
+        //if (Input.GetKeyDown(KeyCode.E)) // Damage trigger
+        //{
+        //    TakeDamage(2);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.R)) // Heal trigger for testing
-        {
-            Heal(2);
-        }
+        //if (Input.GetKeyDown(KeyCode.R)) // Heal trigger for testing
+        //{
+        //    Heal(2);
+        //}
     }
 
     public void TakeDamage(float damage)
@@ -82,7 +83,9 @@ public class CellHealthLogic : MonoBehaviour
 
     private void Kill()
     {
+        Instantiate(_explodeVisual, gameObject.transform.position, Quaternion.identity);
         gameObject.SetActive(false);
+
     }
 
     private void UpdateUI()

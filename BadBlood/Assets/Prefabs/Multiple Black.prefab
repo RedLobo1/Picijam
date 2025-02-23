@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8581677431920045904}
   - component: {fileID: 6784305568876432619}
   - component: {fileID: 7947182839762246681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1614102015612186268}
   - component: {fileID: 6663323990839673451}
   - component: {fileID: 872592026961585218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1923626123905668759}
   - component: {fileID: 5028638575516345607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,8 @@ GameObject:
   - component: {fileID: 8264114223468237988}
   - component: {fileID: 8682674707781778120}
   - component: {fileID: 3106306315531748881}
-  m_Layer: 0
+  - component: {fileID: 2974899350393468337}
+  m_Layer: 6
   m_Name: BlackCell 1
   m_TagString: BlackCell
   m_Icon: {fileID: 0}
@@ -643,8 +644,9 @@ MonoBehaviour:
   _currentHealth: 1
   sizeMultiplier: 0.5
   _timer: 0.25
-  _characterColor: {fileID: 0}
+  _characterColor: {fileID: 5028638575516345607}
   _damageColor: {r: 1, g: 1, b: 1, a: 1}
+  _explodeVisual: {fileID: 1070458226499654527, guid: 1569c44e2e2e1554d988316342731f72, type: 3}
 --- !u!114 &3106306315531748881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,6 +661,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   validTargets: 0200000001000000
+--- !u!114 &2974899350393468337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298995966835504808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830e0d4fee93127449da828ff0ea7af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIelement: 0
+  _lockTransform: 0
+  _lockRotation: 1
 --- !u!1 &3071766659136295912
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +690,8 @@ GameObject:
   - component: {fileID: 9202704198852156023}
   - component: {fileID: 837330556745398451}
   - component: {fileID: 3570138929582923156}
-  m_Layer: 0
+  - component: {fileID: 9203941890727214905}
+  m_Layer: 6
   m_Name: BlackCell 1 (1)
   m_TagString: BlackCell
   m_Icon: {fileID: 0}
@@ -831,8 +849,9 @@ MonoBehaviour:
   _currentHealth: 1
   sizeMultiplier: 0.5
   _timer: 0.25
-  _characterColor: {fileID: 0}
+  _characterColor: {fileID: 6054231010821362522}
   _damageColor: {r: 1, g: 1, b: 1, a: 1}
+  _explodeVisual: {fileID: 1070458226499654527, guid: 1569c44e2e2e1554d988316342731f72, type: 3}
 --- !u!114 &3570138929582923156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +866,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   validTargets: 0200000001000000
+--- !u!114 &9203941890727214905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071766659136295912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830e0d4fee93127449da828ff0ea7af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIelement: 0
+  _lockTransform: 0
+  _lockRotation: 1
 --- !u!1 &3353355996405431185
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +895,8 @@ GameObject:
   - component: {fileID: 768630987061682761}
   - component: {fileID: 800575216921893613}
   - component: {fileID: 5992037590444210039}
-  m_Layer: 0
+  - component: {fileID: 8988757320218626739}
+  m_Layer: 6
   m_Name: BlackCell 1 (2)
   m_TagString: BlackCell
   m_Icon: {fileID: 0}
@@ -1019,8 +1054,9 @@ MonoBehaviour:
   _currentHealth: 1
   sizeMultiplier: 0.5
   _timer: 0.25
-  _characterColor: {fileID: 0}
+  _characterColor: {fileID: 937950545519501933}
   _damageColor: {r: 1, g: 1, b: 1, a: 1}
+  _explodeVisual: {fileID: 1070458226499654527, guid: 1569c44e2e2e1554d988316342731f72, type: 3}
 --- !u!114 &5992037590444210039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1071,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   validTargets: 0200000001000000
+--- !u!114 &8988757320218626739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353355996405431185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830e0d4fee93127449da828ff0ea7af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIelement: 0
+  _lockTransform: 0
+  _lockRotation: 1
 --- !u!1 &4204425484737396679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8119569891358044371}
   - component: {fileID: 937950545519501933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2643355467865584937}
   - component: {fileID: 6054231010821362522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1272,7 @@ GameObject:
   - component: {fileID: 7407665890167842247}
   - component: {fileID: 2970159823554437814}
   - component: {fileID: 8493647249203472653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,8 +1461,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5884808251628327039}
-  m_Layer: 0
-  m_Name: BlackCell 1
+  m_Layer: 6
+  m_Name: Multiple Black
   m_TagString: BlackCell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

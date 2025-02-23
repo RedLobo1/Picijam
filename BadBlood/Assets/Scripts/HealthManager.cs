@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
@@ -12,6 +13,10 @@ public class HealthManager : MonoBehaviour
     {
         levelHealth -= amount;
         UpdateCurrencyUI();
+        if(levelHealth <= 0)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     // Update the currency text on the UI

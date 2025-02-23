@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136301499466602328}
   - component: {fileID: 2039552422570457305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlackCell
   m_TagString: BlackCell
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932306473649856990}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.93700415, w: -0.34931844}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1418325, y: 0.1418325, z: 0.1418325}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5884808251628327039}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -220.891}
 --- !u!212 &2039552422570457305
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,8 @@ GameObject:
   - component: {fileID: 1288043852330213644}
   - component: {fileID: -8240656205485543523}
   - component: {fileID: 2740228184351444454}
-  m_Layer: 0
+  - component: {fileID: 1014596252088219618}
+  m_Layer: 6
   m_Name: BlackCell
   m_TagString: BlackCell
   m_Icon: {fileID: 0}
@@ -260,6 +261,7 @@ MonoBehaviour:
   _timer: 0.25
   _characterColor: {fileID: 2039552422570457305}
   _damageColor: {r: 1, g: 1, b: 1, a: 1}
+  _explodeVisual: {fileID: 1070458226499654527, guid: 1569c44e2e2e1554d988316342731f72, type: 3}
 --- !u!114 &2740228184351444454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +276,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   validTargets: 0100000002000000
+--- !u!114 &1014596252088219618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180599924611274794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830e0d4fee93127449da828ff0ea7af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIelement: 0
+  _lockTransform: 0
+  _lockRotation: 1

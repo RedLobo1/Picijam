@@ -16,14 +16,19 @@ public class WaveSpawner : MonoBehaviour
     public SpawnWave[] waves;           // Array of waves
     public float waveDelay = 3f;        // Delay between each wave
 
-    private int currentWaveIndex = 0;   // To track which wave we're on
+    public int currentWaveIndex = 0;   // To track which wave we're on
     private bool isSpawning = false;    // Flag to control spawning
     private bool waitingForNextWave = false;
+    private bool forceNextWave = false; // Flag to trigger next wave manually
 
     public TextMeshProUGUI textMeshProUGUI;
 
+    [SerializeField] private GameObject redCellReward;
+    [SerializeField] private GameObject redCellSpawn;
+
     void Start()
     {
+        textMeshProUGUI.text = Mathf.CeilToInt(waveDelay).ToString() + "s";
         StartCoroutine(SpawnWaves());
     }
 
@@ -43,6 +48,7 @@ public class WaveSpawner : MonoBehaviour
         {
             isSpawning = true;
             waitingForNextWave = false;
+            forceNextWave = false;
 
             SpawnWave currentWave = waves[currentWaveIndex];
 
@@ -58,12 +64,16 @@ public class WaveSpawner : MonoBehaviour
             waitingForNextWave = true;
 
             float timer = waveDelay;
-            while (timer > 0)
+            while (timer > 0 && !forceNextWave)
             {
                 textMeshProUGUI.text = Mathf.CeilToInt(timer).ToString() + "s";
                 timer -= Time.deltaTime;
                 yield return null;
             }
+
+            // Calculate and spawn red cell rewards
+            int redCellsToSpawn = Mathf.Max(1, Mathf.FloorToInt(timer / 6f));
+            SpawnRedCells(redCellsToSpawn);
 
             currentWaveIndex++;
         }
@@ -73,10 +83,28 @@ public class WaveSpawner : MonoBehaviour
         isSpawning = false;
     }
 
+    // Public method to trigger the next wave immediately
+    public void TriggerNextWave()
+    {
+        if (waitingForNextWave)
+        {
+            forceNextWave = true;
+        }
+    }
+
     // Method to spawn a single object
     private void SpawnObject(GameObject objectToSpawn)
     {
         Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+    }
+
+    // Method to spawn red cell rewards
+    private void SpawnRedCells(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(redCellReward, redCellSpawn.transform.position, Quaternion.identity);
+        }
     }
 
     // Method to get a random object from the array
