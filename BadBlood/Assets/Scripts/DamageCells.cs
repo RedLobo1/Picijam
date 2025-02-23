@@ -3,26 +3,35 @@ using UnityEngine;
 public class DamageCells : MonoBehaviour
 {
     [SerializeField] private int _damage;
-    void Start()
+
+    public enum States
     {
-        
+        None,
+        WhiteCell,
+        RedCell,
+        BlackCell
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Select Tags to Damage")]
+    [SerializeField] private States[] validTargets;  // Array of states to check
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject collisionCell = collision.gameObject;
-
-        if (collisionCell != null)
+        // Check if the collided object's tag matches any valid target
+        foreach (States state in validTargets)
         {
-            if(collisionCell.GetComponent<CellHealthLogic>() != null)
+            if (collision.gameObject.tag == state.ToString())
             {
+                GameObject collisionCell = collision.gameObject;
+
+                // Apply damage if the object has a CellHealthLogic component
                 CellHealthLogic cellHealth = collisionCell.GetComponent<CellHealthLogic>();
-                cellHealth.TakeDamage(_damage);
+                if (cellHealth != null)
+                {
+                    cellHealth.TakeDamage(_damage);
+                }
+
+                break; // Exit loop after first valid hit
             }
         }
     }

@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int _initialHealth = 5;
-    [SerializeField] private int _initialCurrency = 0;
+    [Header("Level settings")]
+    [SerializeField] public int InitialHealth = 5;
+    [SerializeField] public int Currency = 0;
 
+    [Header("Shop settings")]
+    public int RegularWhiteCost = 6;
 
+    [Header("Managers")]
     public CurrencyManager currencyManager;  // Reference to the currency manager to add currency
     public HealthManager healthManager;  // Reference to the currency manager to add currency
 
@@ -13,13 +17,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        currencyManager.currency = _initialCurrency;
-        healthManager.levelHealth = _initialHealth;
+        healthManager.levelHealth = InitialHealth;
     }
     public void OnObjectReachedTarget(int currencyAmount)
     {
         // Add currency to the currency manager
         currencyManager.AddCurrency(currencyAmount);
+    }
+    public void OnBuy(int currencyAmount)
+    {
+         currencyManager.DecreaseCurrency(currencyAmount);
     }
     public void OnEnemyReachedTarget(int damageAmount)
     {

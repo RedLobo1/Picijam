@@ -7,7 +7,20 @@ public class ShooterLogic : MonoBehaviour
     [SerializeField] private float cooldownTime = 1f;   // Cooldown between shots in seconds
     [SerializeField] private Transform shootingPoint;   // The point from where the bullet will be shot
 
-    [SerializeField] private string tag;   // The point from where the bullet will be shot
+    CellHealthLogic cellHealthLogic;
+
+    private void Start()
+    {
+        cellHealthLogic = GetComponent<CellHealthLogic>();
+    }
+    public enum States
+    {
+        WhiteCell,
+        RedCell,
+        BlackCell
+    }
+
+    [SerializeField] private States selectedTag;
 
     private float timeSinceLastShot = 0f;               // Time since last shot
 
@@ -21,7 +34,7 @@ public class ShooterLogic : MonoBehaviour
 
         foreach (var cell in blackCells)
         {
-            if (cell.CompareTag(tag))
+            if (cell.tag == selectedTag.ToString())
             {
                 // If the cooldown has passed and a BlackCell is nearby, shoot a bullet
                 if (timeSinceLastShot >= cooldownTime)
@@ -39,6 +52,8 @@ public class ShooterLogic : MonoBehaviour
     void ShootBullet(Vector2 direction)
     {
         // Instantiate a bullet at the shooting point
+        cellHealthLogic.TakeDamage(0.1f);
+
         GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
         bullet.GetComponent<Bullet>().moveDirection = direction;
     }

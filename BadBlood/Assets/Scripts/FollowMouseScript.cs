@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class FollowMouseScript : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private Color originalColor;
+
+
     [SerializeField] private Color colorToChangeTo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
